@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-observability-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: go-observability-service
+  template:
+    metadata:
+      labels:
+        app: go-observability-service
+    spec:
+      containers:
+      - name: app
+        image: gifted-g/go-observability-service:latest
+        ports:
+        - containerPort: 8080

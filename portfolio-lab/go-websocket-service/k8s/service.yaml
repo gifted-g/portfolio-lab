@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-websocket-service
+spec:
+  selector:
+    app: go-websocket-service
+  ports:
+    - port: 80
+      targetPort: 8080

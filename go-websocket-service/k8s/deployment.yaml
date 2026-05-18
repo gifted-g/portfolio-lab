@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-websocket-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: go-websocket-service
+  template:
+    metadata:
+      labels:
+        app: go-websocket-service
+    spec:
+      containers:
+      - name: app
+        image: gifted-g/go-websocket-service:latest
+        ports:
+        - containerPort: 8080
